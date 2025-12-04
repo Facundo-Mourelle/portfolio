@@ -1,13 +1,539 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>portfolio</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facundo Mourelle - Portfolio</title>
+  <style>
+    /* Base Styles & CSS Variables */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      /* Light Theme */
+      --light-bg: #ffffff;
+      --light-text: #1a202c;
+      --light-accent: #30362f;
+      --light-secondary-bg: #f7fafc;
+      --light-card-bg: #ffffff;
+      --light-border: #e2e8f0;
+      --light-intro-bg: rgba(30, 41, 59, 0.85);
+      --light-intro-text: rgb(84, 84, 84);
+      
+      /* Dark Theme */
+      --dark-bg: #1a1a1a;
+      --dark-text: #f1f5f9;
+      --dark-accent: #5F6165;
+      --dark-secondary-bg: #1C2229;
+      --dark-card-bg: #334155;
+      --dark-border: #475569;
+      --dark-intro-bg: #19222E;
+      --dark-intro-text: rgb(158, 158, 158);
+
+      /* Active Theme Variables */
+      --bg: var(--light-bg);
+      --text: var(--light-text);
+      --accent: var(--light-accent);
+      --secondary-bg: var(--light-secondary-bg);
+      --card-bg: var(--light-card-bg);
+      --border: var(--light-border);
+      --intro-bg: var(--light-intro-bg);
+      --intro-text: var(--light-intro-text);
+    }
+
+    html.dark {
+      --bg: var(--dark-bg);
+      --text: var(--dark-text);
+      --accent: var(--dark-accent);
+      --secondary-bg: var(--dark-secondary-bg);
+      --card-bg: var(--dark-card-bg);
+      --border: var(--dark-border);
+      --intro-bg: var(--dark-intro-bg);
+      --intro-text: var(--dark-intro-text);
+    }
+
+    body {
+      font-family:
+        system-ui,
+        -apple-system,
+        'Segoe UI',
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif,
+        'Apple Color Emoji',
+        'Segoe UI Emoji';
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.3s ease, border-color 0.3s ease;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 700;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    .theme-toggle {
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .theme-toggle:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    /* Landing Section */
+    .landing {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      padding: 4rem 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+      align-items: center;
+    }
+
+    .intro {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .intro h1 {
+      font-size: 3.5rem;
+      color: var(--text);
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      animation: fadeInUp 0.8s ease;
+    }
+
+    .intro-box {
+      padding: 2rem;
+      border-radius: 12px;
+      backdrop-filter: blur(10px);
+      animation: fadeInUp 0.8s ease 0.2s both;
+    }
+
+    .intro-box p {
+      color: var(--intro-text);
+      font-size: 1.25rem;
+      line-height: 1.8;
+    }
+
+    .image-placeholder {
+      background: linear-gradient(135deg, var(--accent), #8b5cf6);
+      border-radius: 12px;
+      min-height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.25rem;
+      animation: fadeInRight 0.8s ease 0.4s both;
+      overflow: hidden;
+    }
+
+    .image-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Projects Section */
+    .projects {
+      background: var(--secondary-bg);
+      padding: 6rem 2rem;
+      transition: background 0.3s ease;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 4rem;
+      color: var(--text);
+    }
+
+    .projects-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .project-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .project-card:nth-child(even) {
+      margin-top: 3rem;
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .project-content {
+      padding: 1.5rem;
+    }
+
+    .project-content h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+      color: var(--text);
+    }
+
+    .project-content p {
+      color: var(--text);
+      opacity: 0.8;
+    }
+
+    /* Skills Section */
+    .skills {
+      padding: 4rem 2rem;
+      background: var(--bg);
+      transition: background 0.3s ease;
+    }
+
+    .skills-grid {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+
+    .skill-box {
+      background: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: 600;
+      border: 2px solid var(--border);
+      transition: all 0.2s ease;
+    }
+
+    .skill-box:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    /* Contact Section */
+    .contact {
+      background: var(--secondary-bg);
+      padding: 6rem 2rem;
+      transition: background 0.3s ease;
+    }
+
+    .contact-grid {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .contact-box {
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 12px;
+      text-align: center;
+      border: 2px solid var(--border);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .contact-box:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .contact-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact-label {
+      font-weight: 700;
+      font-size: 1.125rem;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+
+    .contact-value {
+      color: var(--text);
+      opacity: 0.8;
+      font-size: 0.875rem;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInRight {
+      from {
+        opacity: 0;
+        transform: translateX(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .landing {
+        grid-template-columns: 1fr;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-card:nth-child(even) {
+        margin-top: 0;
+      }
+
+      .intro h1 {
+        font-size: 2.5rem;
+      }
+
+      nav {
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">Facundo Mourelle</div>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+      <button class="theme-toggle" id="themeToggle">
+        <span id="themeIcon">🌙</span> <span id="themeText">Dark</span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Landing Section -->
+  <section class="landing">
+    <div class="intro">
+      <h1>Hello, I'm a Developer</h1>
+      <div class="intro-box">
+        <p>
+          I'm a passionate full-stack developer specializing in building exceptional
+          digital experiences. I focus on creating efficient, scalable, and user-friendly
+          applications that solve real-world problems. With expertise in modern web
+          technologies, I bring ideas to life through clean code and thoughtful design.
+        </p>
+      </div>
+    </div>
+    <div class="image-placeholder">
+      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop" alt="Developer workspace">
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <h2 class="section-title">Featured Projects</h2>
+    <div class="projects-grid">
+      <article class="project-card">
+        <img src="https://images.unsplash.com/photo-1557821552-17105176677c?w=400&h=300&fit=crop" alt="E-Commerce Platform">
+        <div class="project-content">
+          <h3>E-Commerce Platform</h3>
+          <p>Full-stack shopping platform with payment integration and admin dashboard.</p>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=300&fit=crop" alt="Task Management App">
+        <div class="project-content">
+          <h3>Task Management App</h3>
+          <p>Collaborative task tracker with real-time updates and team features.</p>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <img src="https://images.unsplash.com/photo-1592210454359-9043f067919b?w=400&h=300&fit=crop" alt="Weather Dashboard">
+        <div class="project-content">
+          <h3>Weather Dashboard</h3>
+          <p>Interactive weather visualization with location-based forecasting.</p>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop" alt="Social Media Analytics">
+        <div class="project-content">
+          <h3>Social Media Analytics</h3>
+          <p>Data visualization tool for tracking engagement metrics and trends.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="skills">
+    <h2 class="section-title">Technical Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-box">JavaScript</div>
+      <div class="skill-box">React</div>
+      <div class="skill-box">Node.js</div>
+      <div class="skill-box">Python</div>
+      <div class="skill-box">Java</div>
+      <div class="skill-box">MySQL</div>
+      <div class="skill-box">MongoDB</div>
+      <div class="skill-box">Git</div>
+      <div class="skill-box">Docker</div>
+      <div class="skill-box">AWS</div>
+      <div class="skill-box">HTML/CSS</div>
+      <div class="skill-box">TypeScript</div>
+      <div class="skill-box">Express</div>
+      <div class="skill-box">REST APIs</div>
+      <div class="skill-box">GraphQL</div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2 class="section-title">Get In Touch</h2>
+    <div class="contact-grid">
+      <div class="contact-box">
+        <div class="contact-icon">✉️</div>
+        <div class="contact-label">Email</div>
+        <div class="contact-value">hello@example.com</div>
+      </div>
+
+      <div class="contact-box">
+        <div class="contact-icon">📱</div>
+        <div class="contact-label">Phone</div>
+        <div class="contact-value">+1 (555) 123-4567</div>
+      </div>
+
+      <div class="contact-box">
+        <div class="contact-icon">💼</div>
+        <div class="contact-label">LinkedIn</div>
+        <div class="contact-value">linkedin.com/in/yourname</div>
+      </div>
+
+      <div class="contact-box">
+        <div class="contact-icon">🐙</div>
+        <div class="contact-label">GitHub</div>
+        <div class="contact-value">github.com/yourname</div>
+      </div>
+    </div>
+  </section>
+
+  <script type="module">
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const themeText = document.getElementById('themeText');
+    const html = document.documentElement;
+
+    // Load saved theme or default to light
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    html.classList.toggle('dark', savedTheme === 'dark');
+    updateThemeButton(savedTheme);
+
+    // Toggle theme on button click
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = html.classList.contains('dark') ? 'dark' : 'light';
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      
+      html.classList.toggle('dark');
+      localStorage.setItem('theme', newTheme);
+      updateThemeButton(newTheme);
+    });
+
+    function updateThemeButton(theme) {
+      if (theme === 'dark') {
+        themeIcon.textContent = '☀️';
+        themeText.textContent = 'Light';
+      } else {
+        themeIcon.textContent = '🌙';
+        themeText.textContent = 'Dark';
+      }
+    }
+
+    // Smooth scroll for navigation links
+    document.querySelectorAll('nav a[href^="#"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        target.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
 </html>
