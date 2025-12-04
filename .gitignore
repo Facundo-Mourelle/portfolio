@@ -7,37 +7,10 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-# Optional npm cache directory
-.npm
-
-# Optional eslint cache
-.eslintcache
-
-# Dependency directories
 node_modules
-
-# Build output
 dist
 dist-ssr
-
-# Local environment files
 *.local
-
-build/
-remote-repo/
-coverage/
-.module-cache
-fixtures/dom/public/react-dom.js
-fixtures/dom/public/react.js
-test/the-files-to-test.generated.js
-*.log*
-chrome-user-data
-*.sublime-project
-*.sublime-workspace
-*.iml
-.vscode
-*.swp
-*.swo
 
 # Editor directories and files
 .vscode/*
@@ -49,8 +22,3 @@ chrome-user-data
 *.njsproj
 *.sln
 *.sw?
-
-# Environment files
-.env
-.env.local
-.env.*
