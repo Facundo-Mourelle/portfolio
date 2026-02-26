@@ -1,0 +1,10 @@
+{
+  "header.name": "Facundo Mourelle",
+  "header.projects": "Projects",
+  "header.skills": "Skills",
+  "header.contact": "Contact",
+  "header.language": "Español",
+  "intro.title": "Backend & Infrastructure Developer",
+  "intro.subtitle": "Computer Analyst",
+  "intro.description": "I focus on server-side logic, distributed systems management, and environment automation. I bridge the gap between rigorous algorithmic analysis and the deployment of scalable, secure, and remote-ready architectures, ensuring high availability and performance"
+}
