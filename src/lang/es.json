@@ -4,14 +4,20 @@
   "header.skills": "Habilidades",
   "header.contact": "Contacto",
   "header.language": "English",
+
   "intro.title": "Desarrollador backend e infraestructura",
   "intro.subtitle": "Analista en computación",
   "intro.description": "Me especializo en el diseño de lógica de servidor, administración de sistemas distribuidos y automatización de entornos. Mi enfoque combina el rigor del análisis algorítmico con la implementación de arquitecturas escalables, seguras y optimizadas para el trabajo remoto.",
+
   "project.title.switcher": "El Switcher - Juego de mesa",
+  "project.desc.switcher": "Juego web con comunicación bidireccional en tiempo real, sincronización constante entre múltiples clientes. Persistencia de sesiones, garantizando la recuperación de partidas ante desconexiones inesperadas. Motor de control de flujo cronológico, que habilita la reversibilidad de estados para permitir el retroceso de movimientos.",
+
   "project.title.omnet": "Enrutamiento de paquetes Omnet++",
+  "project.desc.omnet":"",
+
   "project.title.parser": "Parser distribuido de articulos",
-  "project.desc.switcher": "lalalala",
+  "project.desc.parser": "lalalala",
+
   "project.desc.omnet": "lelelele",
   "project.desc.parser": "lulululu"
-
 }

@@ -13,7 +13,7 @@
   --light-card-bg: #CE8E55;
   --light-border: #e2e8f0;
   --light-intro-bg: rgba(30, 41, 59, 0.85);
-  --light-intro-text: rgb(84, 84, 84);
+  --light-intro-text: #444444;
   
   /* Dark Theme */
   --dark-bg: #22223b;
@@ -82,9 +82,16 @@ header {
   font-size: 2rem;
   font-weight: 700;
   color: var(--text);
+  text-decoration: none;
   margin: 0;
   display: inline-block;
+  transition: background 0.3s ease;
 }
+
+.logo:hover {
+  color: var(--accent);
+}
+
 
 nav {
   display: flex;
@@ -135,13 +142,19 @@ nav a:hover {
   background: var(--hover);
 }
 
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--text);
+}
 
 /* Landing Section */
 .landing {
   min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  gap: 8rem;
   max-width: 1400px;
   margin: 0 auto;
   align-items: center;
@@ -151,6 +164,7 @@ nav a:hover {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  animation: fadeInUp 0.8s ease;
 }
 
 .intro h1 {
@@ -158,7 +172,6 @@ nav a:hover {
   text-align: center;
   color: var(--text);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  animation: fadeInUp 0.8s ease;
 }
 
 .intro h2 {
@@ -176,6 +189,7 @@ nav a:hover {
 .intro-box p {
   color: var(--intro-text);
   font-size: 1.25rem;
+  font-weight: 600;
   line-height: 1.8;
 }
 
@@ -201,16 +215,10 @@ nav a:hover {
 /* Projects Section */
 .projects {
   background: var(--secondary-bg);
-  padding: 6rem 2rem;
+  padding: 8rem 2rem;
   transition: background 0.3s ease;
 }
 
-.section-title {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  color: var(--text);
-}
 
 .projects-grid {
   max-width: 1200px;
@@ -221,26 +229,6 @@ nav a:hover {
   align-items: start;
 }
 
-
-
-.card-title {
-  color: #262626;
-  font-size: 1.5em;
-  line-height: normal;
-  font-weight: 700;
-  margin-bottom: 0.5em;
-}
-
-.small-desc {
-  font-size: 1em;
-  font-weight: 400;
-  line-height: 1.5em;
-  color: #452c2c;
-}
-
-.small-desc {
-  font-size: 1em;
-}
 
 .go-corner {
   display: flex;
@@ -304,9 +292,9 @@ nav a:hover {
   transform: scale(50);
 }
 
-.card:hover .small-desc {
+.card:hover .card-desc {
   transition: all 0.5s ease-out;
-  color: rgba(255, 255, 255, 0.8);
+  color: #ffeeee;
 }
 
 .card:hover .card-title {
@@ -324,9 +312,74 @@ nav a:hover {
   }
 }
 
+.card-title {
+  color: #262626;
+  font-size: 1.5em;
+  line-height: normal;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}
+
+.card-desc {
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.5em;
+  color: #452c2c;
+}
+
+.card-desc {
+  font-size: 1em;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5em;
+}
+
+.team-tag {
+  font-size: 1rem;
+  color: #666;
+  background: #e0e0e0;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: 800;
+  transition: all 0.5s ease-out;
+}
+
+.card:hover .team-tag {
+  background: var(--bg);
+  color: #ffffff;
+}
+
+.tech-tags {
+  display: flex;
+  gap: 6px;
+}
+
+.tag-pill {
+  font-size: 1rem;
+  font-weight: 1000;
+  padding: 2px 8px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  transition: all 0.5s ease-out;
+}
+
+.card:hover .tag-pill {
+  background: var(--bg);
+  border-color: rgba(255, 255, 255, 0.5);
+  color: #fff; /* Opcional: forzar blanco en hover */
+}
+
+.python { color: #3776ab; border-color: #3776ab; }
+.fastapi { color: #05998b; border-color: #05998b; }
+.react { color: #334488; border-color: #334588; }
+
 /* Certicates Section */
 .certificates {
-  padding: 2rem 2rem;
+  padding: 6rem 2rem;
   background:var(--bg);
   transition: background 0.3 ease;
 }
@@ -387,7 +440,7 @@ nav a:hover {
 
 /* Skills Section */
 .skills {
-  padding: 2rem 2rem;
+  padding: 4rem 2rem;
   background: var(--bg);
   transition: background 0.3s ease;
 }
@@ -407,6 +460,7 @@ nav a:hover {
   border-radius: 8px;
   text-align: center;
   font-weight: 600;
+  align-content: center;
   font-size: 1.5rem;
   border: 2px solid var(--border);
   transition: all 0.2s ease;
