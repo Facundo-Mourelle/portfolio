@@ -6,5 +6,12 @@
   "header.language": "English",
   "intro.title": "Desarrollador backend e infraestructura",
   "intro.subtitle": "Analista en computación",
-  "intro.description": "Me especializo en el diseño de lógica de servidor, administración de sistemas distribuidos y automatización de entornos. Mi enfoque combina el rigor del análisis algorítmico con la implementación de arquitecturas escalables, seguras y optimizadas para el trabajo remoto."
+  "intro.description": "Me especializo en el diseño de lógica de servidor, administración de sistemas distribuidos y automatización de entornos. Mi enfoque combina el rigor del análisis algorítmico con la implementación de arquitecturas escalables, seguras y optimizadas para el trabajo remoto.",
+  "project.title.switcher": "El Switcher - Juego de mesa",
+  "project.title.omnet": "Enrutamiento de paquetes Omnet++",
+  "project.title.parser": "Parser distribuido de articulos",
+  "project.desc.switcher": "lalalala",
+  "project.desc.omnet": "lelelele",
+  "project.desc.parser": "lulululu"
+
 }

@@ -6,11 +6,11 @@
 
 :root {
   /* Light Theme */
-  --light-bg: #ffffff;
+  --light-bg: #9FB4B8;
   --light-text: #1a202c;
   --light-accent: #30362f;
-  --light-secondary-bg: #f7fafc;
-  --light-card-bg: #ffffff;
+  --light-secondary-bg: #DEDBD7;
+  --light-card-bg: #CE8E55;
   --light-border: #e2e8f0;
   --light-intro-bg: rgba(30, 41, 59, 0.85);
   --light-intro-text: rgb(84, 84, 84);
@@ -20,7 +20,7 @@
   --dark-text: #f1f5f9;
   --dark-accent: #bfc0c0;
   --dark-secondary-bg: #4a4e69;
-  --dark-card-bg: #9a8c98; --dark-border: #475569;
+  --dark-card-bg: rgba(217, 217, 217, 0.58); --dark-border: #475569;
   --dark-intro-bg: #1a1a1a;
   --dark-intro-text: #9f9f9f;
 
@@ -281,6 +281,8 @@ nav a:hover {
   width: 100%;
   height: 200px;
   object-fit: cover;
+  border-radius: 8px;
+  border: 4px solid #364A60;
 }
 
 .card:before {
@@ -313,15 +315,123 @@ nav a:hover {
 }
 
 .card:nth-child(even) {
-  margin-top: 4rem; /* Ajusta el valor a tu gusto */
+  margin-top: 4rem;
 }
 
-/* Opcional: Si quieres que en móviles se vea normal y solo se intercale en escritorio */
 @media (max-width: 768px) {
   .card:nth-child(even) {
-    margin-top: 12px; /* Mismo margen que los demás */
+    margin-top: 12px;
   }
 }
+
+/* Certicates Section */
+.certificates {
+  padding: 2rem 2rem;
+  background:var(--bg);
+  transition: background 0.3 ease;
+}
+
+.certificates-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 6rem;
+  margin-top: 3rem;
+}
+
+.cert-box {
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  background: var(--card-bg);
+  border: 1px solid white;
+  box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(6px);
+  border-radius: 17px;
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  user-select: none;
+  font-weight: bolder;
+  color: black;
+}
+
+.cert-box:hover {
+  border: 1px solid black;
+  transform: scale(1.05);
+}
+
+.cert-box:active {
+  transform: scale(0.95) rotateZ(1.7deg);
+}
+
+.cert-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cert-box h3 {
+  margin: 0;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  color: var(--text);
+}
+
+/* Skills Section */
+.skills {
+  padding: 2rem 2rem;
+  background: var(--bg);
+  transition: background 0.3s ease;
+}
+
+.skills-grid {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.skill-box {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.5rem;
+  border: 2px solid var(--border);
+  transition: all 0.2s ease;
+}
+
+.skill-box:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* Contact Section */
+.contact {
+  background: var(--secondary-bg);
+  padding: 2rem 2rem;
+  transition: background 0.3s ease;
+}
+
+.contact-grid {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, min-content);
+  grid-auto-rows: min-content;
+  gap: 4rem;
+  margin-top: 3rem;
 
 .social-links {
   display: flex;
@@ -374,55 +484,6 @@ nav a:hover {
   fill: #333333;
 }
 
-/* Skills Section */
-.skills {
-  padding: 2rem 2rem;
-  background: var(--bg);
-  transition: background 0.3s ease;
-}
-
-.skills-grid {
-  max-width: 1000px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 1rem;
-  margin-top: 3rem;
-}
-
-.skill-box {
-  background: var(--card-bg);
-  padding: 1.5rem;
-  border-radius: 8px;
-  text-align: center;
-  font-weight: 600;
-  font-size: 1.5rem;
-  border: 2px solid var(--border);
-  transition: all 0.2s ease;
-}
-
-.skill-box:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  transform: translateY(-2px);
-}
-
-/* Contact Section */
-.contact {
-  background: var(--secondary-bg);
-  padding: 2rem 2rem;
-  transition: background 0.3s ease;
-}
-
-.contact-grid {
-  display: grid;
-  justify-content: center;
-  grid-template-columns: repeat(auto-fit, min-content);
-  grid-auto-rows: min-content;
-  gap: 4rem;
-  margin-top: 3rem;
-}
-
 /* Animations */
 @keyframes fadeInUp {
   from {
@@ -467,4 +528,3 @@ nav a:hover {
     gap: 1rem;
   }
 }
-

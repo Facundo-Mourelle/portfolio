@@ -6,5 +6,11 @@
   "header.language": "Español",
   "intro.title": "Backend & Infrastructure Developer",
   "intro.subtitle": "Computer Analyst",
-  "intro.description": "I focus on server-side logic, distributed systems management, and environment automation. I bridge the gap between rigorous algorithmic analysis and the deployment of scalable, secure, and remote-ready architectures, ensuring high availability and performance"
+  "intro.description": "I focus on server-side logic, distributed systems management, and environment automation. I bridge the gap between rigorous algorithmic analysis and the deployment of scalable, secure, and remote-ready architectures, ensuring high availability and performance",
+  "project.title.switcher": "The Switcher - Board game",
+  "project.title.omnet": "Packet Routing with Omnet++",
+  "project.title.parser": "Heuristic-Driven Feed Processor",
+  "project.desc.switcher": "lalalala",
+  "project.desc.omnet": "lelelele",
+  "project.desc.parser": "lulululu"
 }
