@@ -4,17 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Facundo Mourelle - Portfolio</title>
-  <script type="module" crossorigin src="/portfolio/assets/index-HdLRFVY3.js"></script>
-  <link rel="stylesheet" crossorigin href="/portfolio/assets/index-Bo00BMcm.css">
+  <script type="module" crossorigin src="/portfolio/assets/index-C8HlWKgq.js"></script>
+  <link rel="stylesheet" crossorigin href="/portfolio/assets/index-C-VyRPV0.css">
 </head>
 <body>
   <!-- Header -->
   <header>
-      <h1 class="logo" data-i18n="header.name"></h1>
+      <h1 href="#landing" class="logo" data-i18n="header.name"></h1>
     <nav>
       <button id="lang-toggle" class="lang-btn" data-i18n="header.language"></button>
       <a href="#projects" data-i18n="header.projects"></a>
-      <a href="#skills" data-i18n="header.skills"></a>
+      <a href="#certificates" data-i18n="header.skills"></a>
       <a href="#contact" data-i18n="header.contact"></a>
       <button class="theme-toggle" id="themeToggle">
         <span id="themeIcon">🌙</span> <span id="themeText"></span>
@@ -23,7 +23,7 @@
   </header>
 
   <!-- Landing Section -->
-  <section class="landing">
+  <section id="landing" class="landing">
     <div class="intro">
       <h1 data-i18n="intro.title"></h1>
       <h2 data-i18n="intro.subtitle"></h2>
@@ -42,22 +42,18 @@
     <h2 class="section-title">Featured Projects</h2>
       <div class="projects-grid">
         <div class="card">
-          <p class="card-title">Product Name</p>
-            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop" alt="Social Media Analytics">
-          <p class="small-desc">
-            Testing testing Testing testing Testing testing Testing testing Testing testing Testing testing
-          </p>
+          <p class="card-title" data-i18n="project.title.switcher"></p>
+            <img src="/portfolio/assets/switcher-pkEZ4dlF.png" alt="Social Media Analytics">
+          <p class="small-desc" data-i18n="project.desc.switcher"></p>
           <div class="go-corner">
             <div class="go-arrow">→</div>
           </div>
         </div>
 
         <div class="card">
-          <p class="card-title">Product Name</p>
-          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop" alt="Social Media Analytics">
-          <p class="small-desc">
-            Testing testing Testing testing Testing testing Testing testing Testing testing Testing testing
-          </p>
+          <p class="card-title" data-i18n="project.title.omnet"></p>
+          <img src="/portfolio/assets/analysis-CTEU3Wpx.png" alt="Social Media Analytics">
+          <p class="small-desc" data-i18n="project.desc.omnet"></p>
           <div class="go-corner">
             <div class="go-arrow">→</div>
           </div>
@@ -83,6 +79,24 @@
           <div class="go-corner">
             <div class="go-arrow">→</div>
           </div>
+        </div>
+      </div>
+  </section>
+
+  <section id="certificates" class="certificates">
+      <h2 class="section-title">Certificates</h2>
+      <div class="certificates-grid">
+        <div class="cert-box">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop" alt="Social Media Analytics">
+          <h3 class="cert-title">Google Cloud</h3>
+        </div>
+        <div class="cert-box">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop" alt="Social Media Analytics">
+          <h3 class="cert-title">Computer Analyst, FAMAF</h3>
+        </div>
+        <div class="cert-box">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop" alt="Social Media Analytics">
+          <h3 class="cert-title">C1 Level, Cambridge</h3>
         </div>
       </div>
   </section>
@@ -102,6 +116,7 @@
   <!-- Contact Section -->
   <section id="contact" class="contact">
     <h2 class="section-title">Get In Touch</h2>
+      <div class="contact-grid">
       <div class="social-links">
        <button class="social-btn mail">
          <svg viewBox="0 0 24 24">
@@ -122,6 +137,7 @@
            ></path>
          </svg>
        </button>
+      </div>
   </div>
   </section>
 
