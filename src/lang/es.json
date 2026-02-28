@@ -9,15 +9,26 @@
   "intro.subtitle": "Analista en computación",
   "intro.description": "Me especializo en el diseño de lógica de servidor, administración de sistemas distribuidos y automatización de entornos. Mi enfoque combina el rigor del análisis algorítmico con la implementación de arquitecturas escalables, seguras y optimizadas para el trabajo remoto.",
 
+  "project.title": "Proyectos destacados",
   "project.title.switcher": "El Switcher - Juego de mesa",
   "project.desc.switcher": "Juego web con comunicación bidireccional en tiempo real, sincronización constante entre múltiples clientes. Persistencia de sesiones, garantizando la recuperación de partidas ante desconexiones inesperadas. Motor de control de flujo cronológico, que habilita la reversibilidad de estados para permitir el retroceso de movimientos.",
 
   "project.title.omnet": "Enrutamiento de paquetes Omnet++",
-  "project.desc.omnet":"",
+  "project.desc.omnet":"Proyecto enfocado en analizar el comportamiento de un entorno simulado de comunicación entre dispositivos utilizando protocolos de transmisión. Se empleó el programa Omnet++ que permite generar modelos de red a partir de nodos interconectados. Se analizaron problemas con respecto al control de flujo y congestión entre algoritmos utilizando métricas, y se desarrolló un algoritmo que permitió adaptar dinámicamente la tasa de transmisión frente a condiciones de congestión en la red, logrando disminuir la cantidad de paquetes de información perdidos.",
 
   "project.title.parser": "Parser distribuido de articulos",
-  "project.desc.parser": "lalalala",
+  "project.desc.parser": "Sistema de procesamiento masivo que automatiza la extracción de contenido desde múltiples suscripciones web y foros. El motor transforma fuentes heterogéneas en un Dataset Distribuido (RDD/DataFrame), orquestando una red de Workers para aplicar heurísticas de filtrado y extracción de entidades en paralelo. El resultado es un feed de datos estructurado, logrando una síntesis eficiente de información dispersa en un formato unificado.",
 
-  "project.desc.omnet": "lelelele",
-  "project.desc.parser": "lulululu"
+  "project.title.spicetify": "Extension de Spicetify",
+  "project.desc.spicetify": "Extensión que permite enlazar dos o más canciones en una playlist para que reproduzcan en el orden establecido en el modo de reproducción aleatorio.",
+
+  "cert.title": "Certificados",
+  "cert.title.google": "Google - Fundamentos en Cloud Computing",
+  "cert.title.famaf": "FAMAF - Analista en Computación",
+  "cert.title.cambridge": "Cambridge - Certificado First Exam Nivel C1",
+  "cert.title.campus": "Campus Virtual - IA y automatización de flujos de trabajo",
+
+  "skills.title": "Habilidades técnicas",
+
+  "contact.title": "Contactame"
 }
