@@ -16,6 +16,9 @@
   "project.title.omnet": "Packet Routing with Omnet++",
   "project.desc.omnet": "Project focused on analyzing simulated network environments using communication protocols. Leveraging OMNeT++ to model interconnected nodes, the study evaluated flow control and congestion issues through performance metrics. A dynamic rate-adaptation algorithm was developed to respond to network congestion, effectively minimizing packet loss and optimizing data throughput.",
 
+  "project.title.dsl": "Geometric Composition DSL",
+  "project.desc.dsl": "A domain-specific language for creating and transforming complex geometric figures. It leverages vector-based semantics for rotations and overlays, featuring an interactive mode with Gloss to design patterns and Escher-style tilings in real-time.",
+
   "project.title.parser": "Heuristic-Driven Feed Processor",
   "project.desc.parser": "A massive data processing system designed to automate content extraction from multiple web subscriptions and forums. The engine transforms heterogeneous sources into a Resilient Distributed Dataset (RDD/DataFrame), orchestrating a network of Workers to apply filtering heuristics and entity extraction in parallel. The result is a structured data feed that achieves efficient synthesis of scattered information into a unified format.",
 

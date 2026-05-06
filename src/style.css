@@ -6,21 +6,22 @@
 
 :root {
   /* Light Theme */
-  --light-bg: #9FB4B8;
+  --light-bg: #9fb4b8;
   --light-text: #1a202c;
   --light-accent: #30362f;
-  --light-secondary-bg: #DEDBD7;
-  --light-card-bg: #CE8E55;
+  --light-secondary-bg: #dedbd7;
+  --light-card-bg: #ce8e55;
   --light-border: #e2e8f0;
   --light-intro-bg: rgba(30, 41, 59, 0.85);
   --light-intro-text: #444444;
-  
+
   /* Dark Theme */
   --dark-bg: #22223b;
   --dark-text: #f1f5f9;
   --dark-accent: #bfc0c0;
   --dark-secondary-bg: #4a4e69;
-  --dark-card-bg: rgba(217, 217, 217, 0.58); --dark-border: #475569;
+  --dark-card-bg: rgba(217, 217, 217, 0.58);
+  --dark-border: #475569;
   --dark-intro-bg: #1a1a1a;
   --dark-intro-text: #9f9f9f;
 
@@ -50,17 +51,19 @@ body {
   font-family:
     system-ui,
     -apple-system,
-    'Segoe UI',
+    "Segoe UI",
     Roboto,
     Helvetica,
     Arial,
     sans-serif,
-    'Apple Color Emoji',
-    'Segoe UI Emoji';
+    "Apple Color Emoji",
+    "Segoe UI Emoji";
   line-height: 1.6;
   color: var(--text);
   background: var(--bg);
-  transition: background 0.3s ease, color 0.3s ease;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
 }
 
 /* Header */
@@ -75,7 +78,9 @@ header {
   font-size: 0.875rem;
   justify-content: space-between;
   align-items: right;
-  transition: background 0.3s ease, border-color 0.3s ease;
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .logo {
@@ -91,7 +96,6 @@ header {
 .logo:hover {
   color: var(--accent);
 }
-
 
 nav {
   display: flex;
@@ -120,7 +124,9 @@ nav a:hover {
   cursor: pointer;
   font-weight: 500;
   font-size: 1.15rem;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
 }
 
 .theme-toggle:hover {
@@ -223,7 +229,6 @@ a {
   transition: background 0.3s ease;
 }
 
-
 .projects-grid {
   max-width: 1200px;
   margin: 0 auto;
@@ -236,7 +241,6 @@ a {
 .project-link {
   text-decoration: none;
 }
-
 
 .go-corner {
   display: flex;
@@ -278,11 +282,11 @@ a {
   height: 200px;
   object-fit: cover;
   border-radius: 8px;
-  border: 4px solid #364A60;
+  border: 4px solid #364a60;
 }
 
 .card:before {
-  content: '';
+  content: "";
   position: absolute;
   z-index: -1;
   top: -16px;
@@ -394,57 +398,63 @@ a {
 }
 
 .react {
-  background-color: #75D1E4;
+  background-color: #75d1e4;
   color: #334488;
   border-color: #334588;
 }
 
 .cpp {
-  background-color: rgba(0, 89, 156, 0.15); 
-  border-color: #00599c; 
-  color: #004481; 
+  background-color: rgba(0, 89, 156, 0.15);
+  border-color: #00599c;
+  color: #004481;
 }
 
 .omnet {
-  background-color: rgba(0, 153, 204, 0.15); 
-  border-color: #0099cc; 
-  color: #0077a1; 
+  background-color: rgba(0, 153, 204, 0.15);
+  border-color: #0099cc;
+  color: #0077a1;
 }
 
 .java {
-  background-color: rgba(231, 111, 0, 0.15); 
-  border-color: #e76f00; 
-  color: #b95900; 
+  background-color: rgba(231, 111, 0, 0.15);
+  border-color: #e76f00;
+  color: #b95900;
 }
 
 .spark {
-  background-color: rgba(226, 92, 52, 0.15); 
-  border-color: #e25c34; 
-  color: #c0401d; 
+  background-color: rgba(226, 92, 52, 0.15);
+  border-color: #e25c34;
+  color: #c0401d;
 }
 
-.javascript { 
+.javascript {
   background-color: rgba(247, 223, 30, 0.4);
-  border-color: #f7df1e; 
+  border-color: #f7df1e;
   color: #c9b200;
 }
 
 .c-lang {
-  background-color: rgba(168, 184, 203, 0.2); 
-  border-color: #5c6c7c; 
-  color: #3e4b59; 
+  background-color: rgba(168, 184, 203, 0.2);
+  border-color: #5c6c7c;
+  color: #3e4b59;
 }
 
-.mysql { 
-  background-color: rgba(0, 117, 143, 0.15); 
-  border-color: #00758f; 
-  color: #005f74; 
+.mysql {
+  background-color: rgba(0, 117, 143, 0.15);
+  border-color: #00758f;
+  color: #005f74;
+}
+
+.haskell {
+  background-color: rgba(94, 80, 134, 0.15);
+  border-color: #5e5086;
+  color: #453b63;
 }
 
 /* Certicates Section */
 .certificates {
   padding: 6rem 2rem;
-  background:var(--bg);
+  background: var(--bg);
   transition: background 0.3 ease;
 }
 
@@ -557,6 +567,7 @@ a {
   grid-auto-rows: min-content;
   gap: 4rem;
   margin-top: 3rem;
+}
 
 .social-links {
   display: flex;
