@@ -22,6 +22,9 @@
   "project.title.parser": "Parser distribuido de articulos",
   "project.desc.parser": "Sistema de procesamiento masivo que automatiza la extracción de contenido desde múltiples suscripciones web y foros. El motor transforma fuentes heterogéneas en un Dataset Distribuido (RDD/DataFrame), orquestando una red de Workers para aplicar heurísticas de filtrado y extracción de entidades en paralelo. El resultado es un feed de datos estructurado, logrando una síntesis eficiente de información dispersa en un formato unificado.",
 
+  "project.title.gogym": "Go Gym",
+  "project.desc.gogym": "Aplicación full-stack para registrar tu progreso en el gimnasio con alto nivel de detalle. Diseñada para calcular volumen efectivo, esfuerzo (RIR) y perfiles de resistencia mecánica.",
+
   "project.title.spicetify": "Extension de Spicetify",
   "project.desc.spicetify": "Extensión que permite enlazar dos o más canciones en una playlist para que reproduzcan en el orden establecido en el modo de reproducción aleatorio.",
 

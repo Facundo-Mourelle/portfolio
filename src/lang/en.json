@@ -6,7 +6,7 @@
   "header.language": "Español",
 
   "intro.title": "Backend & Infrastructure Developer",
-  "intro.subtitle": "Computer Analyst",
+  "intro.subtitle": "Computer Systems Analyst",
   "intro.description": "I focus on server-side logic, distributed systems management, and environment automation. I bridge the gap between rigorous algorithmic analysis and the deployment of scalable, secure, and remote-ready architectures, ensuring high availability and performance",
 
   "project.title": "Featured Projects",
@@ -22,12 +22,15 @@
   "project.title.parser": "Heuristic-Driven Feed Processor",
   "project.desc.parser": "A massive data processing system designed to automate content extraction from multiple web subscriptions and forums. The engine transforms heterogeneous sources into a Resilient Distributed Dataset (RDD/DataFrame), orchestrating a network of Workers to apply filtering heuristics and entity extraction in parallel. The result is a structured data feed that achieves efficient synthesis of scattered information into a unified format.",
 
+  "project.title.gogym": "Go Gym",
+  "project.desc.gogym": "Full-stack application to record your progress in the gym with a high level of detail. Designed to calculate effective volume, effort (RIR) and mechanical resistance profiles.",
+
   "project.title.spicetify": "Spicetify Extension",
   "project.desc.spicetify": "An extension made for Spicetify that allows to link together songs in a playlist that should reproduce one after the other in shuffle mode.",
 
   "cert.title": "Certificates",
   "cert.title.google": "Google - Cloud Computing Foundations",
-  "cert.title.famaf": "FAMAF - Computer Analyst",
+  "cert.title.famaf": "FAMAF - Computer Systems Analyst",
   "cert.title.cambridge": "Cambridge - C1 First Exam Certificate",
   "cert.title.campus": "Campus Virtual - AI & workflow automatizations",
 
