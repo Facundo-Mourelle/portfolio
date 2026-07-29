@@ -232,15 +232,6 @@ a {
     transition: background 0.3s ease;
 }
 
-.projects-grid {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 3rem;
-    align-items: start;
-}
-
 .project-link {
     text-decoration: none;
 }
@@ -427,28 +418,6 @@ a {
     margin-right: -4px;
     color: white;
     font-family: courier, sans;
-}
-
-.card {
-    display: block;
-    position: relative;
-    background-color: #f2f8f9;
-    border-radius: 10px;
-    padding: 2em 1.2em;
-    margin: 12px;
-    text-decoration: none;
-    z-index: 0;
-    overflow: hidden;
-    background: linear-gradient(to bottom, #9fb4b8, #a7d1d9);
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-    border: 4px solid #364a60;
 }
 
 .card-title {
@@ -764,10 +733,6 @@ a {
         grid-template-columns: 1fr;
     }
 
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-
     .project-strip {
         flex-direction: column;
         padding: 1rem;
@@ -778,8 +743,16 @@ a {
         padding: 1rem;
     }
 
-    .project-card:nth-child(even) {
-        margin-top: 0;
+    .strip-carousel .carousel-control {
+        display: none;
+    }
+
+    .strip-carousel .carousel-indicators {
+        display: none;
+    }
+
+    .strip-carousel .go-corner {
+        display: none;
     }
 
     .intro h1 {
