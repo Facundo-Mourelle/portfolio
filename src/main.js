@@ -4,7 +4,6 @@ import './style.css';
 loadTranslations(getCurrentLang());
 translateDOM();
 
-// 2. Control del Botón de idioma
 const langBtn = document.getElementById("lang-toggle");
 
 if (langBtn) {
@@ -14,6 +13,105 @@ if (langBtn) {
     translateDOM();
   });
 }
+
+function initCarousel() {
+  const carousels = document.querySelectorAll(".strip-carousel");
+  carousels.forEach((carousel) => {
+    const inner = carousel.querySelector(".carousel-inner");
+    const slides = carousel.querySelectorAll(".carousel-slide");
+    const prev = carousel.querySelector(".carousel-control.prev");
+    const next = carousel.querySelector(".carousel-control.next");
+    const dots = carousel.querySelectorAll(".dot");
+    let currentIndex = 0;
+    const total = slides.length;
+
+    if (total <= 1) {
+      if (prev) prev.style.display = "none";
+      if (next) next.style.display = "none";
+      dots.forEach((d) => (d.style.display = "none"));
+      return;
+    }
+
+    function updateCarousel() {
+      inner.style.transform = `translateX(-${currentIndex * 100}%)`;
+      dots.forEach((d, i) => d.classList.toggle("active", i === currentIndex));
+    }
+
+    if (prev) {
+      prev.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + total) % total;
+        updateCarousel();
+      });
+    }
+
+    if (next) {
+      next.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % total;
+        updateCarousel();
+      });
+    }
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener("click", () => {
+        currentIndex = i;
+        updateCarousel();
+      });
+    });
+
+    let startX = 0;
+    carousel.addEventListener("touchstart", (e) => {
+      startX = e.changedTouches[0].screenX;
+    });
+    carousel.addEventListener("touchend", (e) => {
+      const diff = startX - e.changedTouches[0].screenX;
+      if (Math.abs(diff) > 50) {
+        if (diff > 0) {
+          currentIndex = (currentIndex + 1) % total;
+        } else {
+          currentIndex = (currentIndex - 1 + total) % total;
+        }
+        updateCarousel();
+      }
+    });
+
+    carousel.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") {
+        currentIndex = (currentIndex - 1 + total) % total;
+        updateCarousel();
+      } else if (e.key === "ArrowRight") {
+        currentIndex = (currentIndex + 1) % total;
+        updateCarousel();
+      }
+    });
+    carousel.setAttribute("tabindex", "0");
+  });
+}
+
+initCarousel();
+
+function revealOnScroll() {
+  const strips = document.querySelectorAll(".project-strip");
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = "1";
+          entry.target.style.transform = "translateY(0)";
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 },
+  );
+  strips.forEach((strip) => {
+    strip.style.opacity = "0";
+    strip.style.transform = "translateY(30px)";
+    strip.style.transition = "opacity 0.8s ease, transform 0.8s ease";
+    observer.observe(strip);
+  });
+}
+
+revealOnScroll();
 
 // 3. Inicializar carruseles
 function initCarousel() {

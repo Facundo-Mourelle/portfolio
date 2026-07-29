@@ -28,6 +28,13 @@
   "project.title.spicetify": "Extension de Spicetify",
   "project.desc.spicetify": "Extensión que permite enlazar dos o más canciones en una playlist para que reproduzcan en el orden establecido en el modo de reproducción aleatorio.",
 
+  "project.images.switcher": ["./assets/img/switcher.png"],
+  "project.images.omnet": ["./assets/img/analysis.png"],
+  "project.images.dsl": ["./assets/img/escher-3-fish.png"],
+  "project.images.parser": ["./assets/img/feed.png"],
+  "project.images.gogym": ["./assets/img/gogym.png"],
+  "project.images.spicetify": ["./assets/img/spicetify.png"],
+
   "cert.title": "Certificados",
   "cert.title.google": "Google - Fundamentos en Cloud Computing",
   "cert.title.famaf": "FAMAF - Analista en Computación",

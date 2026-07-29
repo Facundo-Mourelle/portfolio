@@ -28,6 +28,13 @@
   "project.title.spicetify": "Spicetify Extension",
   "project.desc.spicetify": "An extension made for Spicetify that allows to link together songs in a playlist that should reproduce one after the other in shuffle mode.",
 
+  "project.images.switcher": ["./assets/img/switcher.png"],
+  "project.images.omnet": ["./assets/img/analysis.png"],
+  "project.images.dsl": ["./assets/img/escher-3-fish.png"],
+  "project.images.parser": ["./assets/img/feed.png"],
+  "project.images.gogym": ["./assets/img/gogym.png"],
+  "project.images.spicetify": ["./assets/img/spicetify.png"],
+
   "cert.title": "Certificates",
   "cert.title.google": "Google - Cloud Computing Foundations",
   "cert.title.famaf": "FAMAF - Computer Systems Analyst",
