@@ -13,7 +13,7 @@
   "project.title.switcher": "The Switcher - Board game",
   "project.desc.switcher": "Web game featuring real-time bidirectional communication and constant synchronization across multiple clients. It implements session persistence to ensure match recovery during unexpected disconnections. The system includes a chronological flow control engine, enabling state reversibility for move-by-move undo functionality.",
 
-  "project.title.omnet": "Packet Routing with Omnet++",
+  "project.title.omnet": "Packet Routing",
   "project.desc.omnet": "Project focused on analyzing simulated network environments using communication protocols. Leveraging OMNeT++ to model interconnected nodes, the study evaluated flow control and congestion issues through performance metrics. A dynamic rate-adaptation algorithm was developed to respond to network congestion, effectively minimizing packet loss and optimizing data throughput.",
 
   "project.title.dsl": "Geometric Composition DSL",

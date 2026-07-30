@@ -240,12 +240,25 @@ a {
 .project-strip {
     display: flex;
     flex-direction: row;
-    width: 100vw;
-    margin-left: -2rem;
     height: 80vh;
     min-height: 400px;
     gap: 0;
     align-items: stretch;
+    width: calc(100vw + 6vw);
+    margin-left: calc(-2rem - 6vw);
+    padding-left: 6vw;
+    background: var(--card-bg);
+    border-radius: 0 32px 32px 0;
+    overflow: hidden;
+}
+
+.project-strip.strip-reverse {
+    flex-direction: row-reverse;
+    margin-left: 0;
+    padding-left: 0;
+    padding-right: 6vw;
+    border-radius: 32px 0 0 32px;
+    overflow: hidden;
 }
 
 .project-strip + .project-strip {
@@ -257,18 +270,11 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 2rem 4rem 2rem calc(3rem + 5vw);
-    margin-left: -6vw;
-    background: var(--card-bg);
-    border-radius: 0 32px 32px 0;
-    z-index: 1;
+    padding: 2rem 4rem;
 }
 
 .strip-reverse .strip-content {
-    margin-left: 0;
-    margin-right: -6vw;
-    padding: 2rem calc(3rem + 5vw) 2rem 4rem;
-    border-radius: 32px 0 0 32px;
+    padding: 2rem 4rem;
 }
 
 .strip-content:hover .card-title {
@@ -321,7 +327,6 @@ a {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 12px;
 }
 
 .carousel-control {
@@ -746,20 +751,15 @@ a {
         flex-direction: column;
         width: 100%;
         margin-left: 0;
+        padding-left: 0;
+        padding-right: 0;
         height: auto;
         min-height: auto;
+        border-radius: 0;
     }
 
     .strip-content {
-        margin-left: 0;
         padding: 1.5rem;
-        border-radius: 0;
-    }
-
-    .strip-reverse .strip-content {
-        margin-right: 0;
-        padding: 1.5rem;
-        border-radius: 0;
     }
 
     .strip-carousel .carousel-control {
