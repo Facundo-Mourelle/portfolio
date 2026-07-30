@@ -367,12 +367,23 @@
             </div>
         </section>
 
+        <button class="theme-float" id="themeFloat">🌙</button>
+
         <script type="module" src="/src/main.js"></script>
 
         <script type="module">
             const themeToggle = document.getElementById("themeToggle");
             const themeIcon = document.getElementById("themeIcon");
+            const themeFloat = document.getElementById("themeFloat");
             const html = document.documentElement;
+
+            const applyTheme = (theme) => {
+                html.classList.toggle("dark", theme === "dark");
+                localStorage.setItem("theme", theme);
+                const icon = theme === "dark" ? "☀️" : "🌙";
+                if (themeIcon) themeIcon.textContent = icon;
+                if (themeFloat) themeFloat.textContent = icon;
+            };
 
             const getInitialTheme = () => {
                 const savedTheme = localStorage.getItem("theme");
@@ -382,20 +393,15 @@
                     : "light";
             };
 
-            const applyTheme = (theme) => {
-                html.classList.toggle("dark", theme === "dark");
-                localStorage.setItem("theme", theme);
-                if (themeIcon) {
-                    themeIcon.textContent = theme === "dark" ? "☀️" : "🌙";
-                }
-            };
-
             applyTheme(getInitialTheme());
 
-            themeToggle?.addEventListener("click", () => {
+            const toggleTheme = () => {
                 const isDark = html.classList.contains("dark");
                 applyTheme(isDark ? "light" : "dark");
-            });
+            };
+
+            themeToggle?.addEventListener("click", toggleTheme);
+            themeFloat?.addEventListener("click", toggleTheme);
 
             window
                 .matchMedia("(prefers-color-scheme: dark)")

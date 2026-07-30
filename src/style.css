@@ -859,7 +859,35 @@ html.dark .skill-box {
     }
 }
 
+.theme-float {
+    display: none;
+}
+
 @media (max-width: 768px) {
+    .theme-float {
+        display: flex;
+        position: fixed;
+        bottom: 1.5rem;
+        right: 1.5rem;
+        z-index: 1000;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        border: none;
+        background: var(--accent);
+        color: #fff;
+        font-size: 1.5rem;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        transition: transform 0.2s ease;
+    }
+
+    .theme-float:active {
+        transform: scale(0.9);
+    }
+
     header {
         display: none;
     }
