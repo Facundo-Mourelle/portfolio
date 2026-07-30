@@ -255,8 +255,8 @@ a {
     gap: 0;
     align-items: stretch;
     width: calc(90vw + 6vw);
-    margin-left: -6vw;
-    padding-left: 6vw;
+    margin-left: -8vw;
+    padding-left: 8vw;
     background: var(--card-bg);
     border-radius: 0 32px 32px 0;
     overflow: hidden;
@@ -339,8 +339,8 @@ a {
 }
 
 .carousel-slide img {
-    width: 100%;
-    height: 100%;
+    width: 95%;
+    height: 95%;
     object-fit: contain;
 }
 
@@ -455,6 +455,7 @@ a {
     line-height: normal;
     font-weight: 700;
     margin-bottom: 0.5em;
+    text-align: center;
 }
 
 .card-desc {
