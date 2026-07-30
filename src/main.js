@@ -131,3 +131,12 @@ function revealOnScroll() {
 }
 
 revealOnScroll();
+
+document.querySelectorAll(".project-strip").forEach(strip => {
+  const link = strip.querySelector(".project-link");
+  if (!link) return;
+  strip.addEventListener("click", e => {
+    if (e.target.closest(".carousel-control, .dot, .project-link")) return;
+    window.location.href = link.href;
+  });
+});
