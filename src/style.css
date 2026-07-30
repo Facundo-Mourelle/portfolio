@@ -382,6 +382,7 @@ a {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    border: 6px solid;
 }
 
 .carousel-control {
@@ -416,7 +417,7 @@ a {
 
 .carousel-indicators {
     position: absolute;
-    bottom: 20px;
+    bottom: 5px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -515,11 +516,15 @@ a {
 .team-tag {
     font-size: 1rem;
     color: #666;
-    background: #e0e0e0;
     padding: 4px 10px;
     border-radius: 12px;
     font-weight: 800;
     transition: all 0.5s ease-out;
+}
+
+.bg-team {
+    background: #e0e0e0;
+    border-color: #e0e0e0;
 }
 
 .tech-tags {
