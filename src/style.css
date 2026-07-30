@@ -627,7 +627,7 @@ a {
     box-sizing: border-box;
     width: 100%;
     height: auto;
-    background: var(--card-bg);
+    background: #ce8e55;
     border: 1px solid white;
     box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
     backdrop-filter: blur(6px);
@@ -643,6 +643,10 @@ a {
     user-select: none;
     font-weight: bolder;
     color: black;
+}
+
+html.dark .cert-box {
+    background: var(--dark-card-bg);
 }
 
 .cert-box:hover {
@@ -692,7 +696,7 @@ a {
 }
 
 .skill-box {
-    background: var(--card-bg);
+    background: #ce8e55;
     padding: 1.5rem;
     border-radius: 8px;
     text-align: center;
@@ -707,6 +711,10 @@ a {
     border-color: var(--accent);
     color: var(--accent);
     transform: translateY(-2px);
+}
+
+html.dark .skill-box {
+    background: var(--dark-card-bg);
 }
 
 /* Contact Section */
