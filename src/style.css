@@ -237,11 +237,19 @@ a {
 }
 
 /* Strip Layout */
+.project-wrapper {
+    height: 80vh;
+    min-height: 400px;
+}
+
+.project-wrapper + .project-wrapper {
+    margin-top: 20vh;
+}
+
 .project-strip {
     display: flex;
     flex-direction: row;
-    height: 80vh;
-    min-height: 400px;
+    height: 100%;
     gap: 0;
     align-items: stretch;
     width: calc(100vw + 6vw);
@@ -262,7 +270,7 @@ a {
 }
 
 .project-strip + .project-strip {
-    margin-top: 20vh;
+    margin-top: 0;
 }
 
 .strip-content {
@@ -749,6 +757,15 @@ a {
 @media (max-width: 768px) {
     .landing {
         grid-template-columns: 1fr;
+    }
+
+    .project-wrapper {
+        height: auto;
+        min-height: auto;
+    }
+
+    .project-wrapper + .project-wrapper {
+        margin-top: 0;
     }
 
     .project-strip {
