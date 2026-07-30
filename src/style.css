@@ -10,7 +10,7 @@
     --light-text: #1a202c;
     --light-accent: #30362f;
     --light-secondary-bg: #dedbd7;
-    --light-card-bg: #ce8e55;
+    --light-card-bg: #9fb4b8;
     --light-border: #e2e8f0;
     --light-intro-bg: rgba(30, 41, 59, 0.85);
     --light-intro-text: #444444;
@@ -233,6 +233,10 @@ a {
 }
 
 .project-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
     text-decoration: none;
 }
 
@@ -281,7 +285,6 @@ a {
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     padding: 2rem 4rem;
 }
 
@@ -289,20 +292,20 @@ a {
     padding: 2rem 4rem;
 }
 
-.strip-content:hover .card-title {
+.project-strip:hover .card-title {
     color: #ffffff;
 }
 
-.strip-content:hover .card-desc {
+.project-strip:hover .card-desc {
     color: #ffeeee;
 }
 
-.strip-content:hover .team-tag {
+.project-strip:hover .team-tag {
     background: var(--bg);
     color: #ffffff;
 }
 
-.strip-content:hover .tag-pill {
+.project-strip:hover .tag-pill {
     background: var(--bg);
     border-color: rgba(255, 255, 255, 0.5);
     color: #fff;
@@ -462,7 +465,7 @@ a {
 }
 
 .card-desc {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: 500;
     line-height: 1.5em;
     color: #452c2c;
@@ -471,8 +474,6 @@ a {
 .card-footer {
     display: flex;
     justify-content: space-between;
-    align-self: bottom;
-    margin-top: 1.5em;
 }
 
 .team-tag {
