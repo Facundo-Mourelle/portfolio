@@ -649,6 +649,10 @@ html.dark .cert-box {
     background: var(--dark-card-bg);
 }
 
+.cert-box:has(img[src*="cambridge"]) {
+    align-self: start;
+}
+
 .cert-box:hover {
     border: 1px solid black;
     transform: scale(1.05);
@@ -664,25 +668,33 @@ html.dark .cert-box {
     justify-content: center;
     align-self: flex-start;
     object-fit: contain;
+    background: var(--secondary-bg);
 }
 
 .cert-box h3 {
     margin: 0;
-    align-self: flex-end;
     text-align: center;
     padding: 0.5rem;
     font-size: 1.2rem;
     color: var(--text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .cert-box a {
     text-decoration: none;
 }
 
+.cert-title {
+    align-self: center;
+    text-align: center;
+}
+
 /* Skills Section */
 .skills {
     padding: 4rem 2rem;
-    background: var(--bg);
+    background: var(--secondary-bg);
     transition: background 0.3s ease;
 }
 
