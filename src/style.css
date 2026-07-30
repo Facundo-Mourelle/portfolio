@@ -278,7 +278,7 @@ a {
     height: 32px;
     width: 32px;
     border-radius: 32px;
-    transform: scale(1);
+    transform: scale(0);
     transform-origin: 50% 50%;
     transition: transform 0.7s ease-out;
 }
@@ -295,6 +295,11 @@ a {
     width: calc(90vw + 6vw);
     border-radius: 32px 0 0 32px;
     overflow: hidden;
+}
+
+.project-strip.strip-reverse:before {
+    right: auto;
+    left: -16px;
 }
 
 .project-strip + .project-strip {
