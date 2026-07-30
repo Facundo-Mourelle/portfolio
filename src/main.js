@@ -37,7 +37,9 @@ function initCarousel() {
     let currentIndex = 0;
 
     function updateCarousel() {
-      inner.style.transform = `translateX(-${currentIndex * 100}%)`;
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === currentIndex);
+      });
       dots.forEach((dot, i) => {
         dot.classList.toggle('active', i === currentIndex);
       });

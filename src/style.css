@@ -319,38 +319,41 @@ a {
 .strip-carousel {
     flex: 1;
     position: relative;
-    overflow: hidden;
-    background-color: var(--card-bg);
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
 .carousel-inner {
-    display: flex;
-    transition: transform 0.4s ease;
     width: 100%;
-    height: 100%;
+    height: 90%;
+    border-radius: 16px;
+    overflow: hidden;
 }
 
 .carousel-slide {
     width: 100%;
     height: 100%;
-    flex-shrink: 0;
-    position: relative;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
-    border-radius: 16px;
-    overflow: hidden;
+}
+
+.carousel-slide.active {
+    display: flex;
+    animation: fadeIn 0.35s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .carousel-slide img {
-    color: var(--card-bg);
-    width: 90%;
-    height: 90%;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
-    border-radius: 16px;
 }
 
 .carousel-control {
