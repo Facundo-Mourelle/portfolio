@@ -161,7 +161,7 @@ a {
 
 /* Landing Section */
 .landing {
-    min-height: 100vh;
+    height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 8rem;
@@ -227,9 +227,18 @@ a {
 
 /* Projects Section */
 .projects {
+    position: relative;
     background: var(--secondary-bg);
-    padding: 8rem 0;
     transition: background 0.3s ease;
+}
+
+.projects .section-title {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--secondary-bg);
+    padding: 1rem;
+    margin: 0;
 }
 
 .project-link {
@@ -241,14 +250,10 @@ a {
 
 /* Strip Layout */
 .project-wrapper {
-    height: 80vh;
-    min-height: 400px;
+    height: calc(100vh - 2rem);
     display: flex;
     align-items: center;
-}
-
-.project-wrapper + .project-wrapper {
-    margin-top: 20vh;
+    margin-bottom: 2rem;
 }
 
 .project-strip {
@@ -651,6 +656,17 @@ a {
     align-items: start;
 }
 
+.cert-mobile-nav {
+    display: none;
+    position: relative;
+}
+
+.cert-mobile-nav .carousel-control,
+.cert-mobile-nav .carousel-indicators {
+    position: static;
+    transform: none;
+}
+
 .cert-box {
     box-sizing: border-box;
     width: 100%;
@@ -717,7 +733,7 @@ html.dark .cert-box {
 
 /* Skills Section */
 .skills {
-    padding: 4rem 2rem;
+    padding: 2rem 2rem 1rem;
     background: var(--secondary-bg);
     transition: background 0.3s ease;
 }
@@ -756,7 +772,7 @@ html.dark .skill-box {
 /* Contact Section */
 .contact {
     background: var(--secondary-bg);
-    padding: 2rem 2rem;
+    padding: 1rem 2rem 2rem;
     transition: background 0.3s ease;
 }
 
@@ -844,32 +860,91 @@ html.dark .skill-box {
 }
 
 @media (max-width: 768px) {
+    header {
+        display: none;
+    }
+
     .landing {
         grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 2rem;
+        text-align: center;
+    }
+
+    .intro h1 {
+        font-size: 2rem;
+    }
+
+    .intro h2 {
+        font-size: 1.5rem;
+    }
+
+    .intro-box p {
+        font-size: 1rem;
+    }
+
+    .image-placeholder {
+        width: 200px;
+        height: 200px;
     }
 
     .project-wrapper {
         height: auto;
-        min-height: auto;
+        margin-bottom: 1rem;
     }
 
-    .project-wrapper + .project-wrapper {
-        margin-top: 0;
+    .projects .section-title {
+        font-size: 1.2rem;
+        padding: 0.5rem;
     }
 
-    .project-strip {
+    .project-strip,
+    .project-strip.strip-reverse {
         flex-direction: column;
         width: 100%;
         margin-left: 0;
         padding-left: 0;
         padding-right: 0;
         height: auto;
-        min-height: auto;
         border-radius: 0;
     }
 
-    .strip-content {
+    .strip-content,
+    .strip-reverse .strip-content {
         padding: 1.5rem;
+    }
+
+    .card-title {
+        font-size: 2rem;
+    }
+
+    .card-desc {
+        font-size: 1rem;
+        margin-top: 1rem;
+    }
+
+    .team-tag {
+        font-size: 0.75rem;
+        padding: 2px 6px;
+        border-radius: 8px;
+        font-weight: 700;
+    }
+
+    .tag-pill,
+    .concept-pill {
+        font-size: 0.7rem;
+        font-weight: 700;
+        padding: 1px 6px;
+        border-radius: 4px;
+        border-width: 1px;
+    }
+
+    .tech-tags {
+        gap: 4px;
+    }
+
+    .concept-tags {
+        gap: 4px;
     }
 
     .strip-carousel .carousel-control {
@@ -884,11 +959,67 @@ html.dark .skill-box {
         display: none;
     }
 
-    .intro h1 {
-        font-size: 2.5rem;
+    .certificates {
+        height: 100vh;
+        padding: 1rem;
+        padding-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
     }
 
-    nav {
+    .certificates-grid {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
         gap: 1rem;
+        scrollbar-width: none;
+        flex: none;
+        width: 100%;
+        padding: 1rem 0;
+    }
+
+    .certificates-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .cert-box {
+        min-width: 85vw;
+        scroll-snap-align: center;
+        flex-shrink: 0;
+    }
+
+    .cert-mobile-nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem 0;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+        margin-top: 1rem;
+    }
+
+    .skill-box {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+
+    .contact-grid {
+        margin-top: 1rem;
+    }
+
+    .social-btn {
+        width: 60px;
+        height: 60px;
+    }
+
+    .social-btn svg {
+        width: 30px;
+        height: 30px;
     }
 }

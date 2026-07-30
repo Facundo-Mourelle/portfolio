@@ -110,6 +110,52 @@ function initCarousel() {
 
 initCarousel();
 
+function initCertCarousel() {
+  const grid = document.querySelector('.certificates-grid');
+  const prevBtn = document.getElementById('certPrev');
+  const nextBtn = document.getElementById('certNext');
+  const dotsContainer = document.getElementById('certDots');
+  const boxes = document.querySelectorAll('.cert-box');
+  if (!grid || !boxes.length) return;
+
+  const dots = [];
+  boxes.forEach((_, i) => {
+    const dot = document.createElement('span');
+    dot.className = 'dot' + (i === 0 ? ' active' : '');
+    dot.addEventListener('click', () => {
+      boxes[i].scrollIntoView({ behavior: 'smooth', inline: 'center' });
+    });
+    dotsContainer.appendChild(dot);
+    dots.push(dot);
+  });
+
+  function updateDots() {
+    const scrollLeft = grid.scrollLeft;
+    const boxWidth = boxes[0].offsetWidth + parseFloat(getComputedStyle(grid).gap) || 1;
+    const idx = Math.round(scrollLeft / boxWidth);
+    const clamped = Math.max(0, Math.min(idx, dots.length - 1));
+    dots.forEach((d, i) => d.classList.toggle('active', i === clamped));
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      const boxWidth = boxes[0].offsetWidth + parseFloat(getComputedStyle(grid).gap) || 1;
+      grid.scrollBy({ left: -boxWidth, behavior: 'smooth' });
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      const boxWidth = boxes[0].offsetWidth + parseFloat(getComputedStyle(grid).gap) || 1;
+      grid.scrollBy({ left: boxWidth, behavior: 'smooth' });
+    });
+  }
+
+  grid.addEventListener('scroll', updateDots);
+}
+
+initCertCarousel();
+
 function revealOnScroll() {
   const strips = document.querySelectorAll(".project-strip");
   const observer = new IntersectionObserver(
