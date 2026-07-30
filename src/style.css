@@ -228,7 +228,7 @@ a {
 /* Projects Section */
 .projects {
     background: var(--secondary-bg);
-    padding: 8rem 2rem;
+    padding: 8rem 0;
     transition: background 0.3s ease;
 }
 
@@ -240,24 +240,35 @@ a {
 .project-strip {
     display: flex;
     flex-direction: row;
-    width: 100%;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 2rem;
-    gap: 2rem;
-    align-items: center;
+    width: 100vw;
+    margin-left: -2rem;
+    height: 80vh;
+    min-height: 400px;
+    gap: 0;
+    align-items: stretch;
 }
 
 .project-strip + .project-strip {
-    margin-top: 2rem;
+    margin-top: 0;
 }
 
 .strip-content {
     flex: 1;
-    padding: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 2rem 4rem 2rem calc(3rem + 5vw);
+    margin-left: -6vw;
+    background: var(--card-bg);
+    border-radius: 0 32px 32px 0;
+    z-index: 1;
+}
+
+.strip-reverse .strip-content {
+    margin-left: 0;
+    margin-right: -6vw;
+    padding: 2rem calc(3rem + 5vw) 2rem 4rem;
+    border-radius: 32px 0 0 32px;
 }
 
 .strip-content:hover .card-title {
@@ -288,8 +299,6 @@ a {
     flex: 1;
     position: relative;
     overflow: hidden;
-    border-radius: 12px;
-    min-height: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -422,7 +431,7 @@ a {
 
 .card-title {
     color: #262626;
-    font-size: 1.5em;
+    font-size: 1.8em;
     line-height: normal;
     font-weight: 700;
     margin-bottom: 0.5em;
@@ -735,12 +744,22 @@ a {
 
     .project-strip {
         flex-direction: column;
-        padding: 1rem;
-        gap: 1rem;
+        width: 100%;
+        margin-left: 0;
+        height: auto;
+        min-height: auto;
     }
 
     .strip-content {
-        padding: 1rem;
+        margin-left: 0;
+        padding: 1.5rem;
+        border-radius: 0;
+    }
+
+    .strip-reverse .strip-content {
+        margin-right: 0;
+        padding: 1.5rem;
+        border-radius: 0;
     }
 
     .strip-carousel .carousel-control {
