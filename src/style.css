@@ -266,7 +266,7 @@ a {
 }
 
 .strip-content {
-    flex: 7;
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -302,7 +302,7 @@ a {
 
 /* Carousel */
 .strip-carousel {
-    flex: 3;
+    flex: 1;
     position: relative;
     overflow: hidden;
     display: flex;
