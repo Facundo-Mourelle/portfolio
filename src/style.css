@@ -253,6 +253,7 @@ a {
 }
 
 .project-strip {
+    position: relative;
     display: flex;
     flex-direction: row;
     height: 80%;
@@ -265,6 +266,25 @@ a {
     border-radius: 0 32px 32px 0;
     overflow: hidden;
     cursor: pointer;
+}
+
+.project-strip:before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    top: -16px;
+    right: -16px;
+    background: linear-gradient(135deg, #364a60, #384c6c);
+    height: 32px;
+    width: 32px;
+    border-radius: 32px;
+    transform: scale(1);
+    transform-origin: 50% 50%;
+    transition: transform 0.7s ease-out;
+}
+
+.project-strip:hover:before {
+    transform: scale(150);
 }
 
 .project-strip.strip-reverse {
@@ -286,6 +306,8 @@ a {
     display: flex;
     flex-direction: column;
     padding: 2rem 4rem;
+    position: relative;
+    z-index: 1;
 }
 
 .strip-reverse .strip-content {
