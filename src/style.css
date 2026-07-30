@@ -240,6 +240,8 @@ a {
 .project-wrapper {
     height: 80vh;
     min-height: 400px;
+    display: flex;
+    align-items: center;
 }
 
 .project-wrapper + .project-wrapper {
@@ -249,7 +251,7 @@ a {
 .project-strip {
     display: flex;
     flex-direction: row;
-    height: 100%;
+    height: 80%;
     gap: 0;
     align-items: stretch;
     width: calc(100vw + 6vw);
