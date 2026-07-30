@@ -254,8 +254,8 @@ a {
     height: 80%;
     gap: 0;
     align-items: stretch;
-    width: calc(100vw + 6vw);
-    margin-left: calc(-2rem - 6vw);
+    width: calc(90vw + 6vw);
+    margin-left: -6vw;
     padding-left: 6vw;
     background: var(--card-bg);
     border-radius: 0 32px 32px 0;
@@ -264,9 +264,10 @@ a {
 
 .project-strip.strip-reverse {
     flex-direction: row-reverse;
-    margin-left: 0;
+    margin-left: 10vw;
     padding-left: 0;
     padding-right: 6vw;
+    width: calc(90vw + 6vw);
     border-radius: 32px 0 0 32px;
     overflow: hidden;
 }
