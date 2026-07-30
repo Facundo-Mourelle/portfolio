@@ -621,6 +621,7 @@ a {
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 6rem;
     margin-top: 3rem;
+    align-items: start;
 }
 
 .cert-box {
@@ -647,10 +648,6 @@ a {
 
 html.dark .cert-box {
     background: var(--dark-card-bg);
-}
-
-.cert-box:has(img[src*="cambridge"]) {
-    align-self: start;
 }
 
 .cert-box:hover {
