@@ -342,6 +342,7 @@ a {
     width: 95%;
     height: 95%;
     object-fit: contain;
+    border-radius: 16px;
 }
 
 .carousel-control {
