@@ -23,7 +23,6 @@ function initCarousel() {
     const prevBtn = carousel.querySelector('.carousel-control.prev');
     const nextBtn = carousel.querySelector('.carousel-control.next');
     const indicators = carousel.querySelector('.carousel-indicators');
-    const dots = carousel.querySelectorAll('.dot');
 
     const totalSlides = slides.length;
 
@@ -33,6 +32,18 @@ function initCarousel() {
       if (indicators) indicators.style.display = 'none';
       return;
     }
+
+    indicators.innerHTML = '';
+    const dots = Array.from({ length: totalSlides }, (_, i) => {
+      const dot = document.createElement('span');
+      dot.className = 'dot';
+      dot.addEventListener('click', () => {
+        currentIndex = i;
+        updateCarousel();
+      });
+      indicators.appendChild(dot);
+      return dot;
+    });
 
     let currentIndex = 0;
 
@@ -58,13 +69,6 @@ function initCarousel() {
         updateCarousel();
       });
     }
-
-    dots.forEach((dot, index) => {
-      dot.addEventListener('click', () => {
-        currentIndex = index;
-        updateCarousel();
-      });
-    });
 
     let touchStartX = 0;
     let touchStartY = 0;
