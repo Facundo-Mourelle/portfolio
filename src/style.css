@@ -904,6 +904,8 @@ html.dark .skill-box {
         gap: 2rem;
         padding: 2rem;
         text-align: center;
+        height: auto;
+        min-height: 100vh;
     }
 
     .intro h1 {
@@ -983,11 +985,9 @@ html.dark .skill-box {
     }
 
     .strip-carousel .carousel-control {
-        display: none;
-    }
-
-    .strip-carousel .carousel-indicators {
-        display: none;
+        width: 32px;
+        height: 32px;
+        font-size: 1.2rem;
     }
 
     .strip-carousel .go-corner {
