@@ -842,6 +842,9 @@ html.dark .skill-box {
 .social-btn.github:hover svg {
     fill: #333333;
 }
+.social-btn.resume:hover svg {
+    fill: #0e7c8a;
+}
 
 /* Animations */
 @keyframes fadeInUp {
