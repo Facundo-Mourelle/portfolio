@@ -16,7 +16,7 @@ export function loadTranslations(lang) {
 export function translateDOM() {
     document.querySelectorAll("[data-i18n]").forEach(el => {
         const key = el.dataset.i18n;
-        el.textContent = translations[key] || key;
+        el.innerHTML = translations[key] || key;
     });
 }
 
