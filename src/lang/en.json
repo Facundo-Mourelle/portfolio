@@ -1,6 +1,7 @@
 {
   "header.name": "Facundo Mourelle",
   "header.projects": "Projects",
+  "header.about": "About Me",
   "header.skills": "Skills",
   "header.contact": "Contact",
   "header.language": "Español",
@@ -10,6 +11,19 @@
   "intro.description": "I focus on server-side logic, distributed systems management, and environment automation. I bridge the gap between rigorous algorithmic analysis and the deployment of scalable, secure, and remote-ready architectures, ensuring high availability and performance",
 
   "project.title": "Featured Projects",
+
+  "about.title": "About Me",
+  "about.homelab.title": "Homelab & Self-Hosting",
+  "about.homelab.text": "I run a small homelab at home where I self-host the services I use every day — dashboards, automation flows and personal apps. Managing it taught me real-world DevOps: containers, networking, backups, and keeping things alive without babysitting. It is my playground for anything I do not want to trust to a third-party service.",
+
+  "about.linux.title": "Linux & Ricing",
+  "about.linux.text": "I use Linux as my daily driver and I treat my setup like a project: window manager, terminal, dotfiles, theme — all version-controlled and tuned by hand. Ricing is my gateway into compositors, keybindings and shell scripting, and a constant reminder that the tools you use every day are worth the time you put into them.",
+
+  "about.ai.title": "Dev Setup: AI Workflows & Agents",
+  "about.ai.text": "My development setup goes beyond an editor and a compiler. I build agentic workflows around my toolchain — AI coding agents, custom n8n automations and shell-level integrations that handle the repetitive parts so I can focus on the interesting ones. It is a mix of pragmatism and curiosity: if a task is repetitive, I will probably try to automate it.",
+
+  "about.background.title": "Student & Developer",
+  "about.background.text": "I studied Computer Systems Analysis at FAMAF, UNC, where I built my foundation in algorithmic thinking, distributed systems and networking. Outside the classroom I am a backend and infrastructure developer focused on Go, Python and SQL, always shipping small projects — from board-game engines to full-stack gym trackers — because building beats waiting for someone to hand you a project.",
   "project.title.switcher": "The Switcher - Board game",
   "project.desc.switcher": "Web game featuring real-time bidirectional communication and constant synchronization across multiple clients. It implements session persistence to ensure match recovery during unexpected disconnections. The system includes a chronological flow control engine, enabling state reversibility for move-by-move undo functionality.",
 

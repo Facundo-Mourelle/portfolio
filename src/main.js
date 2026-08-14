@@ -14,6 +14,19 @@ if (langBtn) {
   });
 }
 
+function setHeaderOffset() {
+  const header = document.querySelector('header');
+  if (header) {
+    document.documentElement.style.setProperty(
+      '--header-h',
+      header.offsetHeight + 'px',
+    );
+  }
+}
+
+setHeaderOffset();
+window.addEventListener('resize', setHeaderOffset);
+
 function initCarousel() {
   const carousels = document.querySelectorAll('.strip-carousel');
 
@@ -183,6 +196,52 @@ function revealOnScroll() {
 }
 
 revealOnScroll();
+
+function revealStrips(panel) {
+  panel.querySelectorAll('.project-strip').forEach(strip => {
+    strip.style.opacity = '1';
+    strip.style.transform = 'translateY(0)';
+  });
+}
+
+function initTabToggle() {
+  const titles = document.querySelectorAll('.tab-title');
+  const panels = document.querySelectorAll('.tab-panel');
+
+  function setTab(tab) {
+    titles.forEach(t => {
+      t.classList.toggle('active', t.dataset.tabToggle === tab);
+    });
+    panels.forEach(p => {
+      const show = p.id === `panel-${tab}`;
+      p.classList.toggle('hidden', !show);
+      if (show) revealStrips(p);
+    });
+  }
+
+  titles.forEach(title => {
+    title.addEventListener('click', () => setTab(title.dataset.tabToggle));
+    title.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        setTab(title.dataset.tabToggle);
+      }
+    });
+  });
+
+  document.querySelectorAll('[data-tab-nav]').forEach(link => {
+    link.addEventListener('click', () => {
+      const tab = link.dataset.tabNav;
+      clearTimeout(initTabToggle.timer);
+      initTabToggle.timer = setTimeout(
+        () => setTab(tab),
+        tab === 'projects' ? 0 : 700,
+      );
+    });
+  });
+}
+
+initTabToggle();
 
 document.querySelectorAll(".project-strip").forEach(strip => {
   const link = strip.querySelector(".project-link");

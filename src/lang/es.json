@@ -1,6 +1,7 @@
 {
   "header.name": "Facundo Mourelle",
   "header.projects": "Proyectos",
+  "header.about": "Sobre mí",
   "header.skills": "Habilidades",
   "header.contact": "Contacto",
   "header.language": "English",
@@ -10,6 +11,19 @@
   "intro.description": "Me especializo en el diseño de lógica de servidor, administración de sistemas distribuidos y automatización de entornos. Mi enfoque combina el rigor del análisis algorítmico con la implementación de arquitecturas escalables, seguras y optimizadas para el trabajo remoto.",
 
   "project.title": "Proyectos destacados",
+
+  "about.title": "Sobre mí",
+  "about.homelab.title": "Homelab y self-hosting",
+  "about.homelab.text": "Mantengo un pequeño homelab en casa donde auto-alojo los servicios que uso todos los días — dashboards, flujos de automatización y aplicaciones personales. Administrarlo me enseñó DevOps de verdad: contenedores, redes, backups y mantener todo funcionando sin cuidados constantes. Es mi campo de pruebas para cualquier cosa que no quiera dejarle a un servicio de terceros.",
+
+  "about.linux.title": "Linux y ricing",
+  "about.linux.text": "Uso Linux como sistema diario y trato mi configuración como un proyecto: window manager, terminal, dotfiles y tema — todo versionado y ajustado a mano. El ricing es mi puerta de entrada a compositors, atajos de teclado y scripting en shell, y un recordatorio constante de que las herramientas que usas todos los días merecen el tiempo que les dediques.",
+
+  "about.ai.title": "Entorno de desarrollo: flujos de IA y agentes",
+  "about.ai.text": "Mi entorno de desarrollo va más allá de un editor y un compilador. Construyo flujos agentivos alrededor de mis herramientas — agentes de IA para programar, automatizaciones personalizadas con n8n e integraciones a nivel de shell que se encargan de las partes repetitivas para poder enfocarme en las interesantes. Es una mezcla de pragmatismo y curiosidad: si una tarea es repetitiva, seguramente intente automatizarla.",
+
+  "about.background.title": "Estudiante y desarrollador",
+  "about.background.text": "Estudié Analista en Computación en FAMAF, UNC, donde construí mi base en pensamiento algorítmico, sistemas distribuidos y redes. Fuera del aula soy desarrollador backend e infraestructura enfocado en Go, Python y SQL, siempre publicando proyectos — desde motores de juegos de mesa hasta trackers de gimnasio full-stack — porque construir es mejor que esperar a que alguien te dé un proyecto.",
   "project.title.switcher": "El Switcher - Juego de mesa",
   "project.desc.switcher": "Juego web con comunicación bidireccional en tiempo real, sincronización constante entre múltiples clientes. Persistencia de sesiones, garantizando la recuperación de partidas ante desconexiones inesperadas. Motor de control de flujo cronológico, que habilita la reversibilidad de estados para permitir el retroceso de movimientos.",
 

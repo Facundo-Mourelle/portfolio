@@ -231,6 +231,7 @@ a {
     position: relative;
     background: var(--secondary-bg);
     transition: background 0.3s ease;
+    scroll-margin-top: var(--header-h, 0);
 }
 
 .projects .section-title {
@@ -240,6 +241,50 @@ a {
     background: var(--secondary-bg);
     padding: 1rem;
     margin: 0;
+}
+
+/* Tab Toggle */
+.tab-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 1rem 0;
+}
+
+.tab-title {
+    cursor: pointer;
+    font-size: 2.5rem;
+    margin: 0;
+    padding: 0.25rem 1.5rem;
+    border-radius: 999px;
+    color: var(--intro-text);
+    opacity: 0.5;
+    background: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        opacity 0.25s ease;
+}
+
+.tab-title:hover {
+    color: var(--text);
+}
+
+.tab-title.active {
+    background: var(--bg);
+    color: var(--text);
+    opacity: 1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.tab-panel.hidden {
+    display: none;
+}
+
+#panel-about .card-desc {
+    max-width: 80%;
 }
 
 .project-link {
@@ -935,6 +980,15 @@ html.dark .skill-box {
 
     .projects .section-title {
         font-size: 1.2rem;
+        padding: 0.5rem;
+    }
+
+    .tab-title {
+        font-size: 1.2rem;
+        padding: 0.25rem 1rem;
+    }
+
+    .tab-header {
         padding: 0.5rem;
     }
 

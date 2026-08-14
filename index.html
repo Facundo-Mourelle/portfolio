@@ -16,7 +16,8 @@
                     class="lang-btn"
                     data-i18n="header.language"
                 ></button>
-                <a href="#projects" data-i18n="header.projects"></a>
+                <a href="#projects" data-tab-nav="projects" data-i18n="header.projects"></a>
+                <a href="#projects" data-tab-nav="about" data-i18n="header.about"></a>
                 <a href="#certificates" data-i18n="header.skills"></a>
                 <a href="#contact" data-i18n="header.contact"></a>
                 <button class="theme-toggle" id="themeToggle">
@@ -41,8 +42,12 @@
 
         <!-- Projects Section -->
         <section id="projects" class="projects">
-            <h2 class="section-title" data-i18n="project.title"></h2>
-            <div class="project-wrapper"><div class="project-strip">
+            <div class="tab-header">
+                <h2 class="tab-title active" tabindex="0" data-tab-toggle="projects" data-i18n="project.title"></h2>
+                <h2 class="tab-title" tabindex="0" data-tab-toggle="about" data-i18n="about.title"></h2>
+            </div>
+            <div class="tab-panel" id="panel-projects">
+                <div class="project-wrapper"><div class="project-strip">
                 <div class="strip-content">
                     <a class="project-link" href="https://github.com/Facundo-Mourelle/el-switcher">
                         <p class="card-title" data-i18n="project.title.switcher"></p>
@@ -262,6 +267,101 @@
                     <div class="carousel-indicators"></div>
                 </div>
             </div></div>
+            </div>
+
+            <div class="tab-panel hidden" id="panel-about">
+                <div class="project-wrapper"><div class="project-strip">
+                    <div class="strip-content">
+                        <p class="card-title" data-i18n="about.homelab.title"></p>
+                        <p class="card-desc" data-i18n="about.homelab.text"></p>
+                    </div>
+                    <div class="strip-carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-slide active">
+                                <img class="bg-team" src="./assets/img/placeholder.jpg" alt="Homelab" />
+                            </div>
+                            <div class="carousel-slide">
+                                <img class="bg-team" src="./assets/img/placeholder.jpg" alt="Homelab" />
+                            </div>
+                            <div class="carousel-slide">
+                                <img class="bg-team" src="./assets/img/placeholder.jpg" alt="Homelab" />
+                            </div>
+                        </div>
+                        <button class="carousel-control prev">‹</button>
+                        <button class="carousel-control next">›</button>
+                        <div class="carousel-indicators"></div>
+                    </div>
+                </div></div>
+
+                <div class="project-wrapper"><div class="project-strip strip-reverse">
+                    <div class="strip-content">
+                        <p class="card-title" data-i18n="about.linux.title"></p>
+                        <p class="card-desc" data-i18n="about.linux.text"></p>
+                    </div>
+                    <div class="strip-carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-slide active">
+                                <img class="bg-team" src="./assets/img/placeholder.jpg" alt="Linux ricing" />
+                            </div>
+                            <div class="carousel-slide">
+                                <img class="bg-team" src="./assets/img/placeholder.jpg" alt="Linux ricing" />
+                            </div>
+                            <div class="carousel-slide">
+                                <img class="bg-team" src="./assets/img/placeholder.jpg" alt="Linux ricing" />
+                            </div>
+                        </div>
+                        <button class="carousel-control prev">‹</button>
+                        <button class="carousel-control next">›</button>
+                        <div class="carousel-indicators"></div>
+                    </div>
+                </div></div>
+
+                <div class="project-wrapper"><div class="project-strip">
+                    <div class="strip-content">
+                        <p class="card-title" data-i18n="about.ai.title"></p>
+                        <p class="card-desc" data-i18n="about.ai.text"></p>
+                    </div>
+                    <div class="strip-carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-slide active">
+                                <img class="bg-team" src="./assets/img/placeholder.jpg" alt="AI workflows" />
+                            </div>
+                            <div class="carousel-slide">
+                                <img class="bg-team" src="./assets/img/placeholder.jpg" alt="AI workflows" />
+                            </div>
+                            <div class="carousel-slide">
+                                <img class="bg-team" src="./assets/img/placeholder.jpg" alt="AI workflows" />
+                            </div>
+                        </div>
+                        <button class="carousel-control prev">‹</button>
+                        <button class="carousel-control next">›</button>
+                        <div class="carousel-indicators"></div>
+                    </div>
+                </div></div>
+
+                <div class="project-wrapper"><div class="project-strip strip-reverse">
+                    <div class="strip-content">
+                        <p class="card-title" data-i18n="about.background.title"></p>
+                        <p class="card-desc" data-i18n="about.background.text"></p>
+                    </div>
+                    <div class="strip-carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-slide active">
+                                <img class="bg-team" src="./assets/img/placeholder.jpg" alt="Background" />
+                            </div>
+                            <div class="carousel-slide">
+                                <img class="bg-team" src="./assets/img/placeholder.jpg" alt="Background" />
+                            </div>
+                            <div class="carousel-slide">
+                                <img class="bg-team" src="./assets/img/placeholder.jpg" alt="Background" />
+                            </div>
+                        </div>
+                        <button class="carousel-control prev">‹</button>
+                        <button class="carousel-control next">›</button>
+                        <div class="carousel-indicators"></div>
+                    </div>
+                </div></div>
+            </div>
         </section>
 
         <section id="certificates" class="certificates">
